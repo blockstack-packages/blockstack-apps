@@ -1,0 +1,19 @@
+{
+  "name": "hello-world",
+  "version": "0.1.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "blockstack-auth": "^0.1.0",
+    "onename-api": "^1.0.1",
+    "request": "^2.74.0"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0"
+  },
+  "scripts": {
+    "compile": "browserify requires.js -o bundle.js"
+  },
+  "author": "",
+  "license": "MIT"
+}
