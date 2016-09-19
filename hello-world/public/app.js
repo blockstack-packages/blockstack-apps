@@ -16,9 +16,10 @@ $(document).ready(function() {
     return parameterValue
   }
 
-  $('#avatar-image').on('load', function() {
+  /*$('#avatar-image').on('load', function() {
+    $('#avatar-placeholder').hide()
     $('#avatar-image').show()
-  })
+  })*/
 
   var AuthResponse = BlockstackAuth.AuthResponse,
       verifyAuthMessage = BlockstackAuth.verifyAuthMessage,
