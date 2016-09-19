@@ -1,0 +1,5 @@
+{
+  "projects": {
+    "production": "blockstack-hello-world"
+  }
+}

@@ -1,4 +1,25 @@
 $(document).ready(function() {
+  function getURLParameters() {
+    var queryDict = {}
+    location.search.substr(1).split("&").forEach(function(item) {
+      queryDict[item.split("=")[0]] = item.split("=")[1]
+    })
+    return queryDict
+  }
+
+  function getURLParameter(name) {
+    var queryDict = getURLParameters()
+    var parameterValue = null
+    if (queryDict.hasOwnProperty(name)) {
+      parameterValue = queryDict[name]
+    }
+    return parameterValue
+  }
+
+  $('#avatar-image').on('load', function() {
+    $('#avatar-image').show()
+  })
+
   var AuthResponse = BlockstackAuth.AuthResponse,
       verifyAuthMessage = BlockstackAuth.verifyAuthMessage,
       decodeToken = BlockstackAuth.decodeToken
@@ -6,9 +27,11 @@ $(document).ready(function() {
   var blockstackResolver = new OnenameClient()
 
   $('#login-button').click(function() {
-
-    var blockstackID = 'ryan.id'
-    blockstackID= $('#blockstack-id-input').val()
+    var blockstackID = getURLParameter('id')
+    if (blockstackID === null) {
+      blockstackID = 'ryan.id'
+    }
+    console.log(blockstackID)
 
     var privateKey = '278a5de700e29faae8e40e366ec5012b5ec63d36ec77e8a2417154cc1d25383f'
     var authResponse = new AuthResponse(privateKey)
@@ -42,17 +65,19 @@ $(document).ready(function() {
         }
 
         $('.heading-name').html(name)
-        var imageSectionHTML = '<img src="' + profileImageUrl + '" class="img-rounded avatar">'
-        $('.image-section').html(imageSectionHTML)
+        $('#avatar-image').attr("src", profileImageUrl)
+        /*$('.avatar-section').html(
+          '<img src="' + profileImageUrl + '" class="img-rounded avatar">'
+        )*/
 
-        $('#section-1').hide();
-        $('#section-2').show();
+        $('#section-1').hide()
+        $('#section-2').show()
 
       }
     })
   });
   $('#logout-button').click(function() {
-    $('#section-1').show();
-    $('#section-2').hide();
+    $('#section-1').show()
+    $('#section-2').hide()
   });
 })

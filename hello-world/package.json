@@ -12,7 +12,7 @@
     "browserify": "^13.1.0"
   },
   "scripts": {
-    "compile": "browserify requires.js -o bundle.js"
+    "compile": "browserify requires.js -o public/bundle.js"
   },
   "author": "",
   "license": "MIT"
