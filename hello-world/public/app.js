@@ -1,7 +1,10 @@
 $(document).ready(function() {
+  $('#logout-button').click(logout);
+  $('#login-button').click(requestAuthentication);
+
   var localStorageKeyName = "blockstack"
-  var currentHost = "http://localhost:5000"
-  var identityHost = "http://localhost:3000"
+  var currentHost = location.origin
+  var identityHost = "http://localhost:3000/auth"
   var apiHost = "https://api.blockstack.com"
 
   function getAuthResponseToken() {
@@ -19,7 +22,7 @@ $(document).ready(function() {
       issuedAt: new Date().getTime()
     }
     var authRequest = base64url.encode(JSON.stringify(payload))
-    location = identityHost + "/auth?authRequest=" + authRequest
+    location = identityHost + "?authRequest=" + authRequest
   }
 
   function showProfile(username, profile) {
@@ -32,9 +35,9 @@ $(document).ready(function() {
 
   function recordSession(authResponseToken, username, profile) {
     var blockstackData = {
-      authResponseToken: authResponseToken,
       profile: profile,
-      username: username
+      username: username,
+      authResponseToken: authResponseToken,
     }
     localStorage.setItem(localStorageKeyName, JSON.stringify(blockstackData))
   }
@@ -52,7 +55,7 @@ $(document).ready(function() {
 
   function logout() {
     localStorage.removeItem(localStorageKeyName)
-    location = currentHost
+    window.location = currentHost
   }
 
   function getUsernameFromToken(authResponseToken) {
@@ -75,9 +78,6 @@ $(document).ready(function() {
       }
     }
   }
-
-  $('#logout-button').click(logout);
-  $('#login-button').click(requestAuthentication);
 
   runApp()
 })
