@@ -1,84 +1,83 @@
 $(document).ready(function() {
-  function getURLParameters() {
-    var queryDict = {}
-    location.search.substr(1).split("&").forEach(function(item) {
-      queryDict[item.split("=")[0]] = item.split("=")[1]
-    })
-    return queryDict
+  var localStorageKeyName = "blockstack"
+  var currentHost = "http://localhost:5000"
+  var identityHost = "http://localhost:3000"
+  var apiHost = "https://api.blockstack.com"
+
+  function getAuthResponseToken() {
+    var queryDict = queryString.parse(location.search)
+    return queryDict.authResponse
   }
 
-  function getURLParameter(name) {
-    var queryDict = getURLParameters()
-    var parameterValue = null
-    if (queryDict.hasOwnProperty(name)) {
-      parameterValue = queryDict[name]
-    }
-    return parameterValue
+  function isUserLoggedIn() {
+    return localStorage.getItem(localStorageKeyName) ? true : false
   }
 
-  /*$('#avatar-image').on('load', function() {
-    $('#avatar-placeholder').hide()
-    $('#avatar-image').show()
-  })*/
-
-  var AuthResponse = BlockstackAuth.AuthResponse,
-      verifyAuthMessage = BlockstackAuth.verifyAuthMessage,
-      decodeToken = BlockstackAuth.decodeToken
-
-  var blockstackResolver = new OnenameClient()
-
-  $('#login-button').click(function() {
-    var blockstackID = getURLParameter('id')
-    if (blockstackID === null) {
-      blockstackID = 'ryan.id'
+  function requestAuthentication() {
+    var payload = {
+      appURI: currentHost,
+      issuedAt: new Date().getTime()
     }
-    console.log(blockstackID)
+    var authRequest = base64url.encode(JSON.stringify(payload))
+    location = identityHost + "/auth?authRequest=" + authRequest
+  }
 
-    var privateKey = '278a5de700e29faae8e40e366ec5012b5ec63d36ec77e8a2417154cc1d25383f'
-    var authResponse = new AuthResponse(privateKey)
-    var publicKeychain = 'xpub661MyMwAqRbcFQVrQr4Q4kPjaP4JjWaf39fBVKjPdK6oGBayE46GAmKzo5UDPQdLSM9DufZiP8eauy56XNuHicBySvZp7J5wsyQVpi2axzZ',
-        chainPath = 'bd62885ec3f0e3838043115f4ce25eedd22cc86711803fb0c19601eeef185e39'
-    authResponse.setIssuer(blockstackID, publicKeychain, chainPath)
-    var authResponseToken = authResponse.sign()
+  function showProfile(username, profile) {
+    var person = new Person(profile)
+    $('.heading-name').html(person.name())
+    $('#avatar-image').attr("src", person.avatarUrl())
+    $('#section-1').hide()
+    $('#section-2').show()
+  }
 
-    var decodedToken = decodeToken(authResponseToken)
+  function recordSession(authResponseToken, username, profile) {
+    var blockstackData = {
+      authResponseToken: authResponseToken,
+      profile: profile,
+      username: username
+    }
+    localStorage.setItem(localStorageKeyName, JSON.stringify(blockstackData))
+  }
 
-    var decodedBlockstackID = decodedToken.payload.issuer.username
-    var username = decodedBlockstackID.split('.')[0]
-
-    request('https://api.onename.com/v1/users/' + username,
-    function(error, response, body) {
+  function loadUser(authResponseToken, callback) {
+    var username = getUsernameFromToken(authResponseToken)
+    var requestURL = apiHost + '/v1/users/' + username
+    request(requestURL, function(error, response, body) {
       if (!error && response.statusCode == 200) {
-        var responseJSON = JSON.parse(body)
-        var profile = responseJSON[username].profile
-        var name = profile.name
-
-        var images = profile.image
-        var profileImageUrl = 'https://s3.amazonaws.com/onename/avatar-placeholder.png'
-        if (images.length > 0) {
-          profileImageUrl = images[0].contentUrl
-        }
-        for (var i = 0; i < images.length; i++) {
-          var currentImage = images[i]
-          if (currentImage.name === 'avatar') {
-            profileImageUrl = currentImage.contentUrl
-          }
-        }
-
-        $('.heading-name').html(name)
-        $('#avatar-image').attr("src", profileImageUrl)
-        /*$('.avatar-section').html(
-          '<img src="' + profileImageUrl + '" class="img-rounded avatar">'
-        )*/
-
-        $('#section-1').hide()
-        $('#section-2').show()
-
+        var profile = JSON.parse(body)[username].profile
+        callback(username, profile)
       }
     })
-  });
-  $('#logout-button').click(function() {
-    $('#section-1').show()
-    $('#section-2').hide()
-  });
+  }
+
+  function logout() {
+    localStorage.removeItem(localStorageKeyName)
+    location = currentHost
+  }
+
+  function getUsernameFromToken(authResponseToken) {
+    var decodedToken = BlockstackAuth.decodeToken(authResponseToken)
+    var decodedBlockstackID = decodedToken.payload.issuer.username
+    return decodedBlockstackID.split('.')[0]
+  }
+
+  function runApp() {
+    if (isUserLoggedIn()) {
+      var blockstackData = JSON.parse(localStorage.getItem(localStorageKeyName))
+      showProfile(blockstackData.username, blockstackData.profile)
+    } else {
+      if (getAuthResponseToken()) {
+        var authResponseToken = getAuthResponseToken()
+        loadUser(authResponseToken, function(username, profile) {
+          recordSession(authResponseToken, username, profile)
+          window.location = currentHost
+        })
+      }
+    }
+  }
+
+  $('#logout-button').click(logout);
+  $('#login-button').click(requestAuthentication);
+
+  runApp()
 })

@@ -4,12 +4,17 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "base64url": "^2.0.0",
     "blockstack-auth": "^0.1.0",
+    "blockstack-profiles": "^0.3.5",
     "onename-api": "^1.0.1",
+    "query-string": "^4.2.3",
     "request": "^2.74.0"
   },
   "devDependencies": {
-    "browserify": "^13.1.0"
+    "browserify": "^13.1.0",
+    "connect": "^3.5.0",
+    "serve-static": "^1.11.1"
   },
   "scripts": {
     "compile": "browserify requires.js -o public/bundle.js"
