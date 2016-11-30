@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   var localStorageKeyName = "blockstack"
   var currentHost = location.origin
-  var identityHost = "http://localhost:3000/auth"
+  var identityHost = "http://blockstack-dashboard.firebaseapp.com/auth"
   var apiHost = "https://api.blockstack.com"
 
   function getAuthResponseToken() {
