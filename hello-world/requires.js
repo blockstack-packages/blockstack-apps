@@ -1,4 +1,5 @@
-window.BlockstackAuth = require('blockstack-auth');
+window.AuthAgent = require('blockstack-auth').AuthAgent;
+window.decodeToken = require('blockstack-auth').decodeToken;
 window.Person = require('blockstack-profiles').Person;
 window.request = require('request');
 window.queryString = require('query-string');
