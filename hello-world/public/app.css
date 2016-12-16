@@ -1,27 +1,12 @@
 /* Styles by @mdo */
-
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
+a, a:focus, a:hover { color: #fff; }
+.btn-secondary, .btn-secondary:hover, .btn-secondary:focus {
   color: #333;
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: #fff;
   border: .05rem solid #fff;
 }
-
-/*
- * Base structure
- */
-html,
-body {
+html, body {
   height: 100%;
   background-color: #333;
 }
@@ -30,8 +15,6 @@ body {
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
 }
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
   display: table;
   width: 100%;
@@ -48,46 +31,20 @@ body {
   margin-right: auto;
   margin-left: auto;
 }
-
-/* Padding for spacing */
-.inner {
-  padding: 2rem;
-}
-
-/*
- * Cover
- */
-.cover {
-  padding: 0 1.5rem;
-}
+.inner { padding: 2rem; }
+.cover { padding: 0 1.5rem; }
 .cover .btn-lg {
   padding: .75rem 1.25rem;
   font-weight: bold;
 }
-
-/*
- * Affix and center
- */
 @media (min-width: 40em) {
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
+  .site-wrapper-inner { vertical-align: middle; }
+  .cover-container { width: 100%; }
 }
 @media (min-width: 62em) {
-  .cover-container {
-    width: 42rem;
-  }
+  .cover-container { width: 42rem; }
 }
-
-.hide {
-  display: none;
-}
-
+.hide { display: none; }
 .avatar {
   width: 100px;
   height: 100px;
