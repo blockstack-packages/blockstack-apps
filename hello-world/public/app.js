@@ -12,7 +12,7 @@ $(document).ready(function() {
   function showProfile(username, profile) {
     var person = new Person(profile)
     $('.heading-name').html(person.name())
-    $('#avatar-image').attr("src", person.avatarURL())
+    $('#avatar-image').attr("src", person.avatarUrl())
     $('#section-1').hide()
     $('#section-2').show()
   }
