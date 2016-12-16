@@ -26,7 +26,7 @@ $(document).ready(function() {
         var authResponseToken = authAgent.getAuthResponseToken()
         authAgent.loadUser(authResponseToken, function(username, profile) {
           authAgent.recordSession(authResponseToken, username, profile)
-          window.location = currentHost
+          window.location = authAgent.currentHost
         })
       }
     }
