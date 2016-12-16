@@ -2,7 +2,7 @@ $(document).ready(function() {
   var identityProviderURL = "https://blockstack-dashboard.firebaseapp.com/auth"
   var nameResolverURL = "https://api.blockstack.com/v1/users/"
   var authAgent = new AuthAgent(identityProviderURL, nameResolverURL)
-  $('#logout-button').click(authAgent.logout);
+  $('#logout-button').click(function() { authAgent.logout() });
   $('#login-button').click(function() { authAgent.requestAuthentication() });
   
   function showProfile(username, profile) {
