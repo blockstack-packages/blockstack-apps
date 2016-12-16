@@ -4,12 +4,8 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
-    "base64url": "^2.0.0",
-    "blockstack-auth": "^0.1.15",
-    "blockstack-profiles": "^0.3.5",
-    "onename-api": "^1.0.1",
-    "query-string": "^4.2.3",
-    "request": "^2.74.0"
+    "blockstack-auth": "^0.2.1",
+    "blockstack-profiles": "^0.3.5"
   },
   "devDependencies": {
     "browserify": "^13.1.0",

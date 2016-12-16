@@ -1,9 +1,10 @@
 $(document).ready(function() {
-  var identityProviderURL = "https://blockstack-dashboard.firebaseapp.com/auth"
-  var nameResolverURL = "https://api.blockstack.com/v1/users/"
-  var authAgent = new AuthAgent(identityProviderURL, nameResolverURL)
-  $('#logout-button').click(function() { authAgent.logout() })
-  $('#login-button').click(function() { authAgent.requestAuthentication() })
+  var identityProviderURL = "https://blockstack-dashboard.firebaseapp.com/auth",
+      nameResolverURL = "https://api.blockstack.com/v1/users/",
+      currentHost = window.location.origin
+  var blockstack = new BlockstackAuth.AuthAgent(identityProviderURL, nameResolverURL);
+  $('#logout-button').click(function() { blockstack.logout() })
+  $('#login-button').click(function() { blockstack.requestLogin() })
   
   function showProfile(username, profile) {
     var person = new Person(profile)
@@ -13,18 +14,13 @@ $(document).ready(function() {
     $('#section-2').show()
   }
   
-  function runApp() {
-    if (authAgent.isUserLoggedIn()) {
-      var blockstackData = JSON.parse(localStorage.getItem(authAgent.localStorageKeyName))
-      showProfile(blockstackData.username, blockstackData.profile)
-    } else if (authAgent.getAuthResponseToken()) {
-      var authResponseToken = authAgent.getAuthResponseToken()
-      authAgent.loadUser(authResponseToken, function(username, profile) {
-        authAgent.recordSession(authResponseToken, username, profile)
-        window.location = authAgent.currentHost
-      })
-    }
+  if (blockstack.isUserLoggedIn()) { // If the user is logged in, get the session
+    blockstack.loadSession(function(session) {
+      showProfile(session.username, session.profile)
+    })
+  } else if (blockstack.isLoginPending()) { // If there's an auth token, login the user
+    blockstack.completeLogin(function(session) {
+      window.location = currentHost
+    })
   }
-
-  runApp()
 })
