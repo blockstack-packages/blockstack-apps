@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var identityProviderURL = "https://blockstack-dashboard.firebaseapp.com/auth"
-  var nameResolverURL = "https://api.blockstack.com/v1/users"
+  var nameResolverURL = "https://api.blockstack.com/v1/users/"
   var authAgent = new AuthAgent(identityProviderURL, nameResolverURL)
   window.authAgent = authAgent
 
