@@ -1,20 +1,20 @@
 {
-  "name": "hello-world",
-  "version": "0.1.0",
+  "name": "hello-blockstack",
+  "version": "1.0.0",
   "description": "",
-  "main": "app.js",
-  "dependencies": {
-    "blockstack-auth": "^0.2.1",
-    "blockstack-profiles": "^0.3.5"
-  },
-  "devDependencies": {
-    "browserify": "^13.1.0",
-    "connect": "^3.5.0",
-    "serve-static": "^1.11.1"
-  },
+  "main": "index.js",
   "scripts": {
-    "compile": "browserify requires.js -o public/bundle.js"
+    "browserify": "browserify requires.js -o public/bundle.js"
   },
   "author": "",
-  "license": "MIT"
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^14.0.0",
+    "connect": "^3.5.0",
+    "serve-static": "^1.11.2"
+  },
+  "dependencies": {
+    "blockstack-auth": "^0.2.3",
+    "blockstack-profiles": "^0.3.6"
+  }
 }

@@ -11,28 +11,24 @@
 <body>
   <div class="site-wrapper">
     <div class="site-wrapper-inner">
-      <div class="cover-container">
-        <div class="inner cover" id="section-1">
-          <p class="placeholder" style="height: 100px;">
-          </p>
-          <h1 class="cover-heading">Hello, World!</h1>
-          <p class="lead">
-            <a href="#" class="btn btn-lg btn-secondary" id="login-button">
-              Login with Blockstack
-            </a>
-          </p>
+      <div class="panel-landing" id="section-1">
+        <h1 class="landing-heading">Hello, Blockstack!</h1>
+        <p class="lead">
+          <a href="#" class="btn btn-lg btn-secondary btn-auth" id="login-button">
+            Login with Blockstack
+          </a>
+        </p>
+      </div>
+      <div class="panel-welcome hide" id="section-2">
+        <div class="avatar-section">
+          <img src="https://s3.amazonaws.com/onename/avatar-placeholder.png" class="img-rounded avatar" id="avatar-image">
         </div>
-        <div class="inner cover hide" id="section-2">
-          <p class="avatar-section">
-            <img src="https://s3.amazonaws.com/onename/avatar-placeholder.png" class="img-rounded avatar" id="avatar-image">
-          </p>
-          <h1 class="cover-heading">Hello, <span class="heading-name">Anonymous</span>!</h1>
-          <p class="lead">
-            <a href="#" class="btn btn-lg btn-secondary" id="logout-button">
-              Logout
-            </a>
-          </p>
-        </div>
+        <h1>Hello, <span id="heading-name">Anonymous</span>!</h1>
+        <p class="lead">
+          <a href="#" class="btn btn-lg btn-secondary btn-auth" id="logout-button">
+            Logout
+          </a>
+        </p>
       </div>
     </div>
   </div>
