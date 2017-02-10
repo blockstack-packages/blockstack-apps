@@ -13,3 +13,6 @@
 
 - Decentralized Domain Name Exchange
 - Decentralized Voting App
+- Messaging App
+- Software Repo Snapshot App
+- Name Auto Renewal App
