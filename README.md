@@ -3,6 +3,7 @@
 ### Tutorials
 
 - [Hello, Blockstack](https://blockstack.org/tutorials/hello-world)
+- [CLI Video Tutorial Series](https://www.youtube.com/playlist?list=PLXS8JJHIn4nGCU2uW85dHXpkQJ7QA5JkX)
 
 ### Decentralized Apps
 
