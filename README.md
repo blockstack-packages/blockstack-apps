@@ -6,8 +6,8 @@
 
 ### Decentralized Apps
 
-- OpenBazaar
-- Mediachain
+- [OpenBazaar](https://openbazaar.org/)
+- [Mediachain](http://www.mediachain.io/)
 
 ### Requests for Apps
 
