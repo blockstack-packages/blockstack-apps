@@ -13,6 +13,6 @@
 
 - [Decentralized Domain Name Exchange](https://github.com/blockstack/blockstack-apps/issues/2)
 - [Decentralized Voting App](https://github.com/blockstack/blockstack-apps/issues/3)
-- Messaging App
-- Software Repo Snapshot App
-- Name Auto Renewal App
+- [Messaging App](https://github.com/blockstack/blockstack-apps/issues/6)
+- [Software Repo Snapshot App](https://github.com/blockstack/blockstack-apps/issues/5)
+- [Name Auto Renewal App](https://github.com/blockstack/blockstack-apps/issues/4)
