@@ -1,7 +1,7 @@
 $(document).ready(function() {
-var identityProviderURL = "https://blockstack-dashboard.firebaseapp.com/auth"
+var defaultIDProviderURL = "https://blockstack-dashboard.firebaseapp.com/auth"
 var nameResolverURL = "https://api.blockstack.com/v1/users/"
-var blockstack = new BlockstackAuth.AuthAgent(identityProviderURL, nameResolverURL);
+var blockstack = new BlockstackAuth.AuthAgent(defaultIDProviderURL, nameResolverURL)
 var currentHost = window.location.origin
 $('#login-button').click(function() { blockstack.requestLogin() })
 $('#logout-button').click(function() { blockstack.logout() })

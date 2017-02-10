@@ -14,7 +14,7 @@
     "serve-static": "^1.11.2"
   },
   "dependencies": {
-    "blockstack-auth": "^0.2.3",
+    "blockstack-auth": "^0.2.6",
     "blockstack-profiles": "^0.3.6"
   }
 }
