@@ -2,7 +2,7 @@
 
 ### Tutorials
 
-- Hello, Blockstack
+- [Hello, Blockstack](https://blockstack.org/tutorials/hello-world)
 
 ### Decentralized Apps
 
