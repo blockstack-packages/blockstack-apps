@@ -8,8 +8,10 @@
 ### Decentralized Apps
 
 - [OpenBazaar](https://openbazaar.org/)
-- [Lightning](http://lightning.network/)
 - [Mediachain](http://www.mediachain.io/)
+- [Lightning](http://lightning.network/)
+- [Souq](https://www.youtube.com/watch?v=hmhyB3D9CXA)
+- [Afia](https://twitter.com/BlockstackOrg/status/832312048419749889)
 
 ### Requests for Apps
 
