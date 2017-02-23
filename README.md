@@ -2,16 +2,18 @@
 
 ### Tutorials
 
-- [Hello, Blockstack](https://blockstack.org/tutorials/hello-world)
-- [CLI Video Tutorial Series](https://www.youtube.com/playlist?list=PLXS8JJHIn4nGCU2uW85dHXpkQJ7QA5JkX)
+- [Hello, Blockstack](/tutorials/hello-blockstack)
+- [CLI Video Tutorial Series](/tutorials/cli-walkthrough)
 
 ### Decentralized Apps
 
-- [OpenBazaar](https://openbazaar.org/)
-- [Mediachain](http://www.mediachain.io/)
-- [Lightning](http://lightning.network/)
-- [Souq](https://www.youtube.com/watch?v=hmhyB3D9CXA)
-- [Afia](https://twitter.com/BlockstackOrg/status/832312048419749889)
+- [Afia](/apps/afia)
+- [Exodus](/apps/exodus)
+- [Freebird](/apps/freebird)
+- [Lightning](/apps/lightning)
+- [Mediachain](/apps/mediachain)
+- [OpenBazaar](/apps/blockstack)
+- [Souq](/apps/souq)
 
 ### Requests for Apps
 
