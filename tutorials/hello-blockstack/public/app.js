@@ -1,5 +1,5 @@
 $(document).ready(function() {
-var defaultIDProviderURL = "https://blockstack-dashboard.firebaseapp.com/auth"
+var defaultIDProviderURL = "https://localhost:8888/auth"
 var nameResolverURL = "https://api.blockstack.com/v1/users/"
 var blockstack = new BlockstackAuth.AuthAgent(defaultIDProviderURL, nameResolverURL)
 var currentHost = window.location.origin
