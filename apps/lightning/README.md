@@ -4,6 +4,6 @@
 
 - [lightning.network](http://lightning.network/)
 
-### Progress
+### Updates
 
 - [Forum post: "Blockstack + Lightning"](https://forum.blockstack.org/t/blockstack-lightning/689)

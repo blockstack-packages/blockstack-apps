@@ -3,16 +3,16 @@
 ### Tutorials
 
 - [Hello, Blockstack](/tutorials/hello-blockstack)
-- [CLI Video Tutorial Series](/tutorials/cli-walkthrough)
+- [CLI Video Series](/tutorials/cli-video-series)
 
 ### Decentralized Apps
 
+- [OpenBazaar](/apps/blockstack)
+- [Lightning](/apps/lightning)
+- [Mediachain](/apps/mediachain)
 - [Afia](/apps/afia)
 - [Exodus](/apps/exodus)
 - [Freebird](/apps/freebird)
-- [Lightning](/apps/lightning)
-- [Mediachain](/apps/mediachain)
-- [OpenBazaar](/apps/blockstack)
 - [Souq](/apps/souq)
 
 ### Requests for Apps
