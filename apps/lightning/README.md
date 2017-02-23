@@ -2,7 +2,7 @@
 
 ### Resources
 
-- [lightning.network](http://lightning.network/)
+- Website: [lightning.network](http://lightning.network/)
 
 ### Updates
 

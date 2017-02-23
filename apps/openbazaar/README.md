@@ -1,6 +1,6 @@
 # OpenBazaar
 
-### About
+### Resources
 
 - Website: [openbazaar.org](https://openbazaar.org/)
 

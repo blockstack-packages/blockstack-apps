@@ -2,4 +2,4 @@
 
 ### Resources
 
-- [freebird.im](https://freebird.im/)
+- Website: [freebird.im](https://freebird.im/)

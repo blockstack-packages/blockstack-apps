@@ -2,4 +2,4 @@
 
 ### Resources
 
-- [exodus.io](https://www.exodus.io/)
+- Website: [exodus.io](https://www.exodus.io/)

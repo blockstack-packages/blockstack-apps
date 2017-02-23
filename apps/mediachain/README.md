@@ -2,7 +2,7 @@
 
 ### Resources
 
-- [mediachain.io](http://www.mediachain.io/)
+- Website: [mediachain.io](http://www.mediachain.io/)
 
 ### Updates
 

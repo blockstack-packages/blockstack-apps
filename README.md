@@ -7,7 +7,7 @@
 
 ### Decentralized Apps
 
-- [OpenBazaar](/apps/blockstack)
+- [OpenBazaar](/apps/openbazaar)
 - [Lightning](/apps/lightning)
 - [Mediachain](/apps/mediachain)
 - [Afia](/apps/afia)
