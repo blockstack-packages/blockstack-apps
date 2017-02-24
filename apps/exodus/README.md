@@ -6,4 +6,4 @@
 
 ### Status
 - wants to create a namespace where they can register .exodus names
-- wanst to include a blockstack core node with every exodus application
+- wants to include a blockstack core node with every exodus application
