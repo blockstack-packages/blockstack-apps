@@ -13,7 +13,7 @@ $(document).ready(function() {
   var signingKey = null
 
   $('#login-button').click(function() {
-    blockstack.requestSignIn(signingKey, appManifest, "http://localhost:3000/auth")
+    blockstack.requestSignIn(signingKey, appManifest)
   })
   $('#logout-button').click(function() {
     blockstack.signUserOut(window.location.origin)
@@ -37,7 +37,3 @@ $(document).ready(function() {
     })
   }
 })
-
-//var defaultIDProviderURL = "http://localhost:3000/auth"
-//var nameResolverURL = "https://api.blockstack.com/v1/users/"
-//var blockstack = new BlockstackAuth.AuthAgent(defaultIDProviderURL, nameResolverURL)
