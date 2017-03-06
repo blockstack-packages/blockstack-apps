@@ -1,26 +1,43 @@
 $(document).ready(function() {
-var defaultIDProviderURL = "http://localhost:3000/auth"
-var nameResolverURL = "https://api.blockstack.com/v1/users/"
-var blockstack = new BlockstackAuth.AuthAgent(defaultIDProviderURL, nameResolverURL)
-var currentHost = window.location.origin
-$('#login-button').click(function() { blockstack.requestLogin() })
-$('#logout-button').click(function() { blockstack.logout() })
+  var currentHost = window.location.origin
+  var appManifest = {
+    name: "Hello, Blockstack",
+    start_url: currentHost,
+    description: "A simple demo of blockstack auth",
+    icons: [{
+      "src": "https://raw.githubusercontent.com/blockstack/blockstack-portal/master/app/images/app-hello-blockstack.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }]
+  }
+  var signingKey = null
 
-function showProfile(username, profile) {
-  var person = new Person(profile)
-  $('#heading-name').html(person.name())
-  $('#avatar-image').attr("src", person.avatarUrl())
-  $('#section-1').hide()
-  $('#section-2').show()
-}
+  $('#login-button').click(function() {
+    blockstack.requestSignIn(signingKey, appManifest, "http://localhost:3000/auth")
+  })
+  $('#logout-button').click(function() {
+    blockstack.signUserOut(window.location.origin)
+  })
 
-if (blockstack.isUserLoggedIn()) { // User logged in? Get the session.
-  blockstack.loadSession(function(session) {
-    showProfile(session.username, session.profile)
-  })
-} else if (blockstack.isLoginPending()) { // Auth token present? Login the user.
-  blockstack.completeLogin(function(session) {
-    window.location = currentHost
-  })
-}
+  function showProfile(username, profile) {
+    var person = new blockstack.Person(profile)
+    $('#heading-name').html(person.name())
+    $('#avatar-image').attr("src", person.avatarUrl())
+    $('#section-1').hide()
+    $('#section-2').show()
+  }
+
+  if (blockstack.isUserSignedIn()) { // User signed in? Get the session.
+    blockstack.loadSession(function(session) {
+      showProfile(session.username, session.profile)
+    })
+  } else if (blockstack.isSignInPending()) { // Auth token present? Sign in the user.
+    blockstack.signUserIn(function(session) {
+      window.location = currentHost
+    })
+  }
 })
+
+//var defaultIDProviderURL = "http://localhost:3000/auth"
+//var nameResolverURL = "https://api.blockstack.com/v1/users/"
+//var blockstack = new BlockstackAuth.AuthAgent(defaultIDProviderURL, nameResolverURL)

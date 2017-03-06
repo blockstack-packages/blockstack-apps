@@ -1,20 +1,24 @@
 {
   "name": "hello-blockstack",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hello, Blockstack",
   "main": "index.js",
   "scripts": {
-    "browserify": "browserify requires.js -o public/bundle.js"
+    "browserify": "browserify requires.js -o public/bundle.js",
+    "server": "npm run browserify; node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blockstack/blockstack-apps.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "browserify": "^14.0.0",
     "connect": "^3.5.0",
     "serve-static": "^1.11.2"
   },
   "dependencies": {
-    "blockstack-auth": "^0.2.6",
-    "blockstack-profiles": "^0.3.6"
+    "blockstack": "^0.2.9"
   }
 }
