@@ -15,8 +15,7 @@
   "license": "MIT",
   "devDependencies": {
     "browserify": "^14.0.0",
-    "connect": "^3.5.0",
-    "serve-static": "^1.11.2"
+    "express": "^4.15.2"
   },
   "dependencies": {
     "blockstack": "^0.2.9"
