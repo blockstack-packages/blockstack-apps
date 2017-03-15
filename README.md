@@ -15,6 +15,10 @@
 - [Freebird](/apps/freebird)
 - [Souq](/apps/souq)
 
+### Listed Apps
+
+- [Hello, Blockstack](/tutorials/hello-blockstack)
+
 ### Requests for Apps
 
 #### Decentralized Social Networking
