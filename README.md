@@ -17,6 +17,10 @@
 
 ### Listed Apps
 
+- Profiles
+- Storage
+- Wallet
+- Account
 - [Hello, Blockstack](/tutorials/hello-blockstack)
 
 ### Requests for Apps
