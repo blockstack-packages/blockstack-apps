@@ -29,3 +29,4 @@ node_modules
 # Custom
 unused
 bundle.js
+.DS_Store
