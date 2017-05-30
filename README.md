@@ -14,6 +14,7 @@
 - [Exodus](/apps/exodus)
 - [Freebird](/apps/freebird)
 - [Souq](/apps/souq)
+- [To Do](https://blockstack-todo-app.netlify.com/)
 
 ### Listed Apps
 
