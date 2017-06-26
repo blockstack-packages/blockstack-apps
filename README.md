@@ -5,6 +5,10 @@
 - [Hello, Blockstack](/tutorials/hello-blockstack)
 - [CLI Video Series](/tutorials/cli-video-series)
 
+### App Ideas
+
+- Get paid $10 in Bitcoin for every app idea that gets merged [in this README.md](URL)
+
 ### Decentralized Apps
 
 - [OpenBazaar](/apps/openbazaar)
@@ -51,3 +55,4 @@
 
 - [Decentralized Domain Name Exchange](https://github.com/blockstack/blockstack-apps/issues/2)
 - [Name Auto Renewal Service](https://github.com/blockstack/blockstack-apps/issues/4)
+
