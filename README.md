@@ -7,7 +7,7 @@
 
 ### App Ideas
 
-- Get paid $10 in Bitcoin for every app idea that gets merged [in this README.md](URL)
+- Get paid $10 in Bitcoin for every app idea that gets merged into [this app-ideas.md file](https://github.com/blockstack/blockstack-apps/blob/master/app-ideas)
 
 ### Decentralized Apps
 
