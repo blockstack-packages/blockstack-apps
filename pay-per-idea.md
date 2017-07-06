@@ -8,7 +8,7 @@ Single page javascript To Do List app that runs locally in your browser (after h
  - Link to Github of project(s): https://github.com/blockstack/blockstack-todos
 
 
-##### Read these before commiting a pull request:
+##### Read these before commiting your first pull request:
 - Include your bitcoin public address in the comment section of your pull request.
 - Successful merges get paid $10 in bitcoin for each idea.
 - The more tools of Blockstack (gaia storage, blockchain ID, Blockstack Auth, etc) used the higher chance of pull request being accepted.
