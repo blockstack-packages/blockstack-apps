@@ -18,6 +18,9 @@ Single page javascript To Do List app that runs locally in your browser (after h
 - New Github projects can be added at any time.
 - Project requests at the top of the list are the ones being prioritized
 
+Looking forward to seeing what ideas you come up with!
+
+
 ### Apps that require only single player storage and sign in that utlize
 
 #### To Do List
