@@ -21,7 +21,7 @@ Single page javascript To Do List app that runs locally in your browser (after h
 Looking forward to seeing what ideas you come up with!
 
 
-### Apps that require only single player storage and sign in that utlize
+### App Ideas that require only single-player storage on Blockstack
 
 #### To Do List
 Single page javascript To Do List app that runs locally in your browser (after having downloaded [Blockstack app](https://github.com/blockstack/blockstack-browser/releases)). It stores data on repurposed cloud storage using Blockstack's [Gaia Storage System](https://github.com/blockstack/blockstack-core/blob/rc-0.14.2/docs/gaia.md) and allows for sign in with your Blockchain ID using [Blockstack Auth](https://github.com/blockstack/blockstack.js/tree/master/src/auth)
